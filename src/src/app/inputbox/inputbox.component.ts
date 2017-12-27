@@ -20,9 +20,9 @@ export class InputboxComponent implements OnInit {
     previousChat.classList.remove('show');
     botBalloon.classList.remove('answer');
 
-    previousChat.innerHTML = texts.value;
+   // previousChat.innerHTML = texts.value;
     previousChat.classList.add('show');
-    texts.value = '';
+    //texts.value = '';
     botBalloon.classList.add('answer');
   }
 
