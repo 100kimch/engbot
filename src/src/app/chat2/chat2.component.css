@@ -1,0 +1,120 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    margin-left: -10vw;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+#bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url('../../assets/img/bg2.png');
+  background-size: 170vw auto;
+  background-position: 40% 50%;
+  z-index: -2;
+}
+
+#bot {
+  position: absolute;
+  width: 100vw;
+  height: 60vh;
+  bottom: 50px;
+  background: url('../../assets/img/bot2_1.png');
+  background-size: 100vw auto;
+  transition: 1s;
+  animation: fadeIn 1.5s 0s linear 1;
+  -webkit-animation-fill-mode: forwards;
+  /*Chrome 16+, Safari 4+*/
+  -moz-animation-fill-mode: forwards;
+  /*FF 5+*/
+  -o-animation-fill-mode: forwards;
+  /*Not implemented yet*/
+  -ms-animation-fill-mode: forwards;
+  /*IE 10+*/
+  animation-fill-mode: forwards;
+  /*when the spec is finished*/
+}
+
+#bot.left {
+  left: -10vw;
+}
+
+ul {
+  position: absolute;
+  width: 100vw;
+  bottom: 90px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  width: auto;
+  padding: 1.3em 2em;
+  margin: 0 0.5em;
+  background: #ddddddee;
+  font-size: 1.3em;
+  border-radius: 1.3em;
+  background: url('../../assets/img/bubble.svg');
+  background-size: 100%;
+}
+
+li:after,
+li:before {
+  top: 100%;
+  left: 75%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+li:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #a7c9f5dd;
+  border-width: 20px;
+  border-right-width: 30px;
+  border-left-width: 10px;
+  margin-left: -20px;
+}
+
+li:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-top-color: #567aaa;
+  border-width: 26px;
+  border-right-width: 36px;
+  border-left-width: 16px;
+  margin-left: -26px;
+}
+
+ul.more {
+  position: absolute;
+  bottom: 50px;
+  right: 5vw;
+  height: 45vh;
+  overflow: scroll;
+}
+
+li.more {
+  width: 20vw;
+  min-height: 2em;
+  /* background: #dddddddd; */
+  margin: 0.5em 0;
+  padding: 1em;
+  font-size: 1.5em;
+  font-weight: 900;
+  list-style: none;
+  text-align: center;
+  text-shadow: 0 0 0.3em #111;
+}

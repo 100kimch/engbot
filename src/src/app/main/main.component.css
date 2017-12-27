@@ -1,3 +1,7 @@
+#back {
+  opacity: 0;
+}
+
 .botBoxInner {
   fill: url(#Gradient1);
   transition: height 1s, fill 0.5s;
@@ -40,6 +44,18 @@ Svg {
   height: 27vh;
   margin: -2vh 2vw 0 4vw;
 }
+/* 
+.b1 .botBoxInner, .b3 .botBoxInner {
+  fill: linear-gradient(#cfcfcf, #aaa);
+}
+
+.b2 .botBoxInner {
+  fill: #c5b2f5;
+}
+
+.b2 .botBoxOuter {
+  fill: #462e8a;
+} */
 
 .botBox {
   width: 94vw;

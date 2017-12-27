@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { MainDirective } from './main/main.directive';
 import { InputboxComponent } from './inputbox/inputbox.component';
 import { BotBalloonComponent } from './bot-balloon/bot-balloon.component';
+import { AppRoutingModule } from './app-routing.module';
+import { Chat2Component } from './chat2/chat2.component';
 
 
 @NgModule({
@@ -22,9 +24,11 @@ import { BotBalloonComponent } from './bot-balloon/bot-balloon.component';
     MainDirective,
     InputboxComponent,
     BotBalloonComponent,
+    Chat2Component,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

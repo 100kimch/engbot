@@ -1,4 +1,5 @@
 import { Directive, HostBinding, HostListener, ElementRef, Renderer } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Directive({
     // tslint:disable-next-line:directive-selector
@@ -6,7 +7,8 @@ import { Directive, HostBinding, HostListener, ElementRef, Renderer } from '@ang
 })
 export class MainDirective {
     constructor(private el: ElementRef,
-                private renderer: Renderer){
+                private renderer: Renderer,
+                private router: Router){
         console.log(el, renderer);
     }
     // @HostListener('click') showButton($event) {
@@ -23,10 +25,20 @@ export class MainDirective {
     // }
 
     @HostListener('click') showButton() {
-        this.el.nativeElement.classList.add('selected');
+        const classList = this.el.nativeElement.classList;
+
+        if (classList.contains('selected')) {
+            if (classList.contains('b1')) {
+                this.router.navigate(['/chat']);
+            } else if (classList.contains('b2')) {
+                this.router.navigate(['/chat2']);
+            }
+        }
+        classList.add('selected');
     }
 
     @HostListener('mouseout') hideButton() {
-        this.el.nativeElement.classList.remove('selected');
+        const classList = this.el.nativeElement.classList;
+        classList.remove('selected');
     }
 }

@@ -12,4 +12,18 @@ export class InputboxComponent implements OnInit {
   ngOnInit() {
   }
 
+  showMessage() {
+    const previousChat = document.querySelector('#previousChat');
+    const texts = document.querySelector('#texts');
+    const botBalloon = document.querySelector('#botBalloon');
+
+    previousChat.classList.remove('show');
+    botBalloon.classList.remove('answer');
+
+    previousChat.innerHTML = texts.value;
+    previousChat.classList.add('show');
+    texts.value = '';
+    botBalloon.classList.add('answer');
+  }
+
 }

@@ -1,3 +1,27 @@
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes answering {
+    70% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 #botBalloon {
     display: inline;
     position: absolute;
@@ -5,18 +29,28 @@
     max-width: 90vw;
     text-align: center;
     vertical-align: middle;
-    top: 140px;
+    top: 150px;
     left: 5vw;
 	background: #a7c9f5dd;
     border: 4px solid #567aaa;
     border-radius: 1em;
     padding: 0.6em 1em;
     box-sizing: border-box;
-    font-size: 2em;
-    color: #102d53;
+    font-size: 1.9em;
+    font-weight: bolder;
+    color: #1a4379;
     line-break: keep-all;
     -webkit-line-break: normal;
+    line-height: 1.3em;
     text-shadow: 0 0 0.2em #ffffff;
+    transform: scale(0);
+
+    animation: pop 0.5s 2s linear 1;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
 }
 #botBalloon:after, #botBalloon:before {
 	top: 100%;
@@ -48,16 +82,28 @@
 
 #botBalloon.answer {
     top: 180px;
+
+    animation: answering 0.5s 2s linear 1;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
 }
 
 #previousChat {
     display: inline;
     position: absolute;
-    background: #cccccccc;
+    background: #eeeeeecc;
     padding: 0.6em 1em;
     top: 140px;
     left: 5vw;
     font-size: 1.3em;
     border-radius: 10px;
-    
+    border: 2px solid #ffffff66;
+    opacity: 0;
+    transition: 1s;
+}
+#previousChat.show {
+    opacity: 1;
 }

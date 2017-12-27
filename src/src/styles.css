@@ -9,6 +9,9 @@ html, body {
     /* background: linear-gradient(#aaa, #fff); */
     background: #ccc;
     background-size: 100vw 100vh;
+
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
 header, section {
